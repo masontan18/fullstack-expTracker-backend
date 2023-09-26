@@ -101,6 +101,14 @@ const getUserExpenses = async (req, res) => {
                 userId: Number(id)
             }
         })
+        // const result = await prisma.user.findFirst({
+        //     select: {
+        //         expenses: true
+        //     },
+        //     where: {
+        //         id: Number(id)
+        //     }
+        // })
         res.json(result)
     } catch (err) {
         console.log(err)
