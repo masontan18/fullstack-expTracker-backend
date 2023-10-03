@@ -93,6 +93,9 @@ const getUserExpenses = async (req, res) => {
         const foundUser = await prisma.user.findFirst({
             where: {
                 id: Number(id)
+            },
+            orderBy: {
+                date: "desc"
             }
         })
         if (!foundUser) return res.status(400).json({ "message": "no user record found for getUserExpenses" })
